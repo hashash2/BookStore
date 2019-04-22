@@ -56,6 +56,7 @@ public class AddBookActivity extends AppCompatActivity {
                 String sBookTitle = bookTitle.getText().toString();
                 String sContactNumber = contactNumber.getText().toString();
                 String sPrice = price.getText().toString();
+                String sCondition = "";
                 //the ID number for the correct condition button, if -1 is empty.
                 int conditionID = conditionButtons.getCheckedRadioButtonId();
                 if (sCourseName.isEmpty()
@@ -68,9 +69,20 @@ public class AddBookActivity extends AppCompatActivity {
                 } else {
                     Firebase childRef = nRootRef.child("Book");
 
-                    //Map<String, Book> books = new HashMap<>();
-                    childRef.push().setValue(new Book(sCourseName, sCourseNumber, sBookTitle, sContactNumber, sPrice, "fair"));
-
+                    if (conditionID == R.id.rbConditionNew) {
+                        sCondition = "New";
+                    } else if (conditionID == R.id.rbConditionVeryGood) {
+                        sCondition = "Very good";
+                    } else if (conditionID == R.id.rbConditionSomeWear) {
+                        sCondition = "Some wear";
+                    } else if (conditionID == R.id.rbConditionReadable) {
+                        sCondition = "Readable";
+                    }
+                    try {
+                        childRef.push().setValue(new Book(sCourseName, sCourseNumber, sBookTitle, sContactNumber, sPrice, sCondition, firebaseAuth.getCurrentUser().getUid()));
+                    } catch (NullPointerException e) {
+                        Toast.makeText(AddBookActivity.this, "An error occured grabbing userid", Toast.LENGTH_SHORT).show();
+                    }
                 }
 
             }

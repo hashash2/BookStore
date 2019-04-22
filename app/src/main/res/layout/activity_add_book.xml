@@ -118,7 +118,7 @@
             android:text="Very Good" />
 
         <RadioButton
-            android:id="@+id/rbSomeWear"
+            android:id="@+id/rbConditionSomeWear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
