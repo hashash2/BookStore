@@ -9,13 +9,19 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.firebase.client.Firebase;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class AddBookActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private EditText courseName, courseNumber, bookTitle, contactNumber, price;
     private RadioGroup conditionButtons;
     private Button submit, cancel;
+
+    private Firebase nRootRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +37,8 @@ public class AddBookActivity extends AppCompatActivity {
         conditionButtons = (RadioGroup)findViewById(R.id.rgAddConditionButtons);
         submit = (Button)findViewById(R.id.btnAddBookSubmit);
         cancel = (Button)findViewById(R.id.btnAddBookCancel);
+
+        nRootRef = new Firebase("https://login-70f0b.firebaseio.com/Books");
 
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +65,14 @@ public class AddBookActivity extends AppCompatActivity {
                         || sPrice.isEmpty()
                         || conditionID == -1) {
                     Toast.makeText(AddBookActivity.this, "Please fill out all fields.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Firebase childRef = nRootRef.child("Book");
+
+                    //Map<String, Book> books = new HashMap<>();
+                    childRef.push().setValue(new Book(sCourseName, sCourseNumber, sBookTitle, sContactNumber, sPrice, "fair"));
+
                 }
+
             }
         });
     }
