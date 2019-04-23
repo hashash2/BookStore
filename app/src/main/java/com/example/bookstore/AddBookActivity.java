@@ -81,7 +81,7 @@ public class AddBookActivity extends AppCompatActivity {
                     try {
                         childRef.push().setValue(new Book(sCourseName, sCourseNumber, sBookTitle, sContactNumber, sPrice, sCondition, firebaseAuth.getCurrentUser().getUid()));
                     } catch (NullPointerException e) {
-                        Toast.makeText(AddBookActivity.this, "An error occured grabbing userid", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AddBookActivity.this, "An error occurred grabbing userid", Toast.LENGTH_SHORT).show();
                     }
                 }
 
