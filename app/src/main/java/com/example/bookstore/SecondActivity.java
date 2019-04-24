@@ -48,6 +48,16 @@ public class SecondActivity extends AppCompatActivity {
             }
         });
 
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                startActivity(new Intent(SecondActivity.this, SearchActivity.class));
+            }
+        });
+
+
+
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

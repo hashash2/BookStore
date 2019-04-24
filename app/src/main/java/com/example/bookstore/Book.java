@@ -1,6 +1,7 @@
 package com.example.bookstore;
 
 public class Book {
+
     public String courseName;
     public String courseNumber;
     public String bookTitle;
@@ -17,5 +18,9 @@ public class Book {
         price = cost;
         condition = state;
         userid = id;
+    }
+
+    public Book() {
+
     }
 }
