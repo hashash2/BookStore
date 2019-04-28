@@ -9,11 +9,9 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.example.bookstore.Model.Book;
 import com.firebase.client.Firebase;
 import com.google.firebase.auth.FirebaseAuth;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class AddBookActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;

@@ -1,9 +1,9 @@
 package com.example.bookstore;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -12,8 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.bookstore.Model.Book;
+import com.example.bookstore.ViewHolder.BookViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DataSnapshot;
@@ -23,7 +25,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class SearchActivity extends AppCompatActivity {
@@ -72,7 +73,7 @@ public class SearchActivity extends AppCompatActivity {
         results.setHasFixedSize(true);
         search = (Button) findViewById(R.id.btnQuery);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("Book");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Books").child("Book");
 
         options = new FirebaseRecyclerOptions.Builder<Book>().setQuery(databaseReference, Book.class).build();
 
@@ -92,13 +93,8 @@ public class SearchActivity extends AppCompatActivity {
             }
         };
 
-        RecyclerView.LayoutManager layoutManager = new RecyclerView.LayoutManager() {
-            @Override
-            public RecyclerView.LayoutParams generateDefaultLayoutParams() {
-                return null;
-            }
-        };
-        results.setLayoutManager(layoutManager);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(),2);
+        results.setLayoutManager(gridLayoutManager);
         adapter.startListening();
         results.setAdapter(adapter);
     }
@@ -151,69 +147,5 @@ public class SearchActivity extends AppCompatActivity {
 
             }
         });
-    }
-
-    public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyAdapterViewHolder> {
-        public Context c;
-        public ArrayList<Book>  arrayList;
-
-        public MyAdapter(Context pC, ArrayList<Book> pArrayList) {
-            this.c = pC;
-            this.arrayList = pArrayList;
-        }
-
-        @Override
-        public int getItemCount() {
-            return arrayList.size();
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        @NonNull
-        @Override
-        public MyAdapterViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-            View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_layout, viewGroup,false);
-
-            return new MyAdapterViewHolder(v);
-        }
-
-        @Override
-        public void onBindViewHolder(@NonNull MyAdapterViewHolder myAdapterViewHolder, int i) {
-            Book book = arrayList.get(i);
-
-            myAdapterViewHolder.bookName.setText(book.bookTitle);
-            myAdapterViewHolder.bookCondition.setText(book.condition);
-            myAdapterViewHolder.bookPrice.setText(book.price);
-        }
-
-        public class MyAdapterViewHolder extends RecyclerView.ViewHolder {
-            TextView bookName;
-            TextView bookCondition;
-            TextView bookPrice;
-
-            public MyAdapterViewHolder(View itemView) {
-                super(itemView);
-                bookName = (TextView) itemView.findViewById(R.id.tvlsBookName);
-                bookCondition = (TextView) itemView.findViewById(R.id.tvlsBookCondition);
-                bookPrice = (TextView) itemView.findViewById(R.id.tvlsBookPrice);
-            }
-        }
-
-    }
-
-    public class BookViewHolder extends RecyclerView.ViewHolder {
-        TextView bookName;
-        TextView bookCondition;
-        TextView bookPrice;
-        public BookViewHolder(View itemView) {
-           super(itemView);
-
-           bookName = (TextView) itemView.findViewById(R.id.tvlsBookName);
-           bookCondition = (TextView) itemView.findViewById(R.id.tvlsBookCondition);
-           bookPrice = (TextView) itemView.findViewById(R.id.tvlsBookPrice);
-       }
     }
 }
