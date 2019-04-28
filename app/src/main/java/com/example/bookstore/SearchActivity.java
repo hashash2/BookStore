@@ -72,18 +72,11 @@ public class SearchActivity extends AppCompatActivity {
         results.setHasFixedSize(true);
         search = (Button) findViewById(R.id.btnQuery);
 
-        search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                firebaseUserSearch();
-            }
-        });
-
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Book");
 
         options = new FirebaseRecyclerOptions.Builder<Book>().setQuery(databaseReference, Book.class).build();
 
-        adapter = new FirebaseRecyclerAdapter<Book, BookViewHolder>() {
+        adapter = new FirebaseRecyclerAdapter<Book, BookViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull BookViewHolder holder, int position, @NonNull Book model) {
                 holder.bookName.setText(model.bookTitle);
@@ -166,7 +159,7 @@ public class SearchActivity extends AppCompatActivity {
 
         public MyAdapter(Context pC, ArrayList<Book> pArrayList) {
             this.c = pC;
-            this.arrayList = pArrayList
+            this.arrayList = pArrayList;
         }
 
         @Override
