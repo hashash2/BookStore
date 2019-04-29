@@ -33,7 +33,6 @@ public class SecondActivity extends AppCompatActivity {
         logout = (Button)findViewById(R.id.btnLogout);
         addBook = (Button)findViewById(R.id.btnAddBook);
         searchButton = (Button)findViewById(R.id.btnSearch);
-        searchThis = (EditText)findViewById(R.id.etSearchbar);
         avatar = (ImageView)findViewById(R.id.ivProfileAvatar);
         username = (TextView)findViewById(R.id.tvProfileUsername);
         email = (TextView)findViewById(R.id.tvProfileEmail);
