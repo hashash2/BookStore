@@ -1,9 +1,11 @@
 package com.example.bookstore;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -31,7 +33,7 @@ public class SearchActivity extends AppCompatActivity {
 
     private EditText keyword;
     private RecyclerView results;
-    private Button search;
+    private Button back;
 
     ArrayList<Book> arrayList;
 
@@ -71,7 +73,15 @@ public class SearchActivity extends AppCompatActivity {
         arrayList = new ArrayList<>();
         results = (RecyclerView) findViewById((R.id.rvResults));
         results.setHasFixedSize(true);
-        search = (Button) findViewById(R.id.btnQuery);
+        back = (Button) findViewById(R.id.btnSearchBackOut);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                startActivity(new Intent(SearchActivity.this, SecondActivity.class));
+            }
+        });
 
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Books").child("Book");
 
@@ -79,10 +89,19 @@ public class SearchActivity extends AppCompatActivity {
 
         adapter = new FirebaseRecyclerAdapter<Book, BookViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull BookViewHolder holder, int position, @NonNull Book model) {
+            protected void onBindViewHolder(@NonNull BookViewHolder holder, int position, @NonNull final Book model) {
                 holder.bookName.setText(model.bookTitle);
                 holder.bookCondition.setText(model.condition);
                 holder.bookPrice.setText(model.price);
+                holder.viewInfo.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        finish();
+                        Intent intent = new Intent(SearchActivity.this, BookInfoActivity.class);
+                        intent.putExtra("book", model);
+                        startActivity(intent);
+                    }
+                });
             }
 
             @NonNull
@@ -93,8 +112,8 @@ public class SearchActivity extends AppCompatActivity {
             }
         };
 
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(),2);
-        results.setLayoutManager(gridLayoutManager);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
+        results.setLayoutManager(linearLayoutManager);
         adapter.startListening();
         results.setAdapter(adapter);
     }
@@ -124,7 +143,7 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private void firebaseUserSearch(String input) {
-        Query query = databaseReference.orderByChild("courseName").startAt(input).endAt(input + "\uf8ff");
+        Query query = databaseReference.orderByChild("courseNumber").startAt(input).endAt(input + "\uf8ff");
 
         query.addValueEventListener(new ValueEventListener() {
             @Override
