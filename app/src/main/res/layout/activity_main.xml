@@ -20,7 +20,7 @@
         android:paddingHorizontal="15dp"
         android:background="@drawable/rounded_rectangle"
         android:ems="10"
-        android:hint="Username"
+        android:hint="Email"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
