@@ -5,8 +5,8 @@
     android:id="@+id/tvBookInfoContactNumber"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BookInfoActivity"
-    android:background="@drawable/gradientbackground">
+    android:background="@drawable/gradientbackground"
+    tools:context=".BookInfoActivity">
 
     <TextView
         android:id="@+id/tvBookInfoTitle"
@@ -48,8 +48,8 @@
 
     <TextView
         android:id="@+id/tvBookInfoPrice"
-        android:layout_width="240dp"
-        android:layout_height="22dp"
+        android:layout_width="242dp"
+        android:layout_height="30dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -60,10 +60,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.121"
         app:layout_constraintStart_toEndOf="@+id/tvBookInfoPriceLabel"
-        app:layout_constraintTop_toBottomOf="@+id/tvBookInfoTitle"
-        app:layout_constraintVertical_bias="0.13" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.222" />
 
     <TextView
         android:id="@+id/tvBookInfoCourseName"
@@ -72,36 +72,32 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="228dp"
-        android:layout_marginRight="228dp"
-        android:layout_marginBottom="8dp"
-        android:text="TextView"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.034"
-        app:layout_constraintStart_toEndOf="@+id/tvBookInfoCourseLabel"
-        app:layout_constraintTop_toBottomOf="@+id/tvBookInfoCondition"
-        app:layout_constraintVertical_bias="0.187" />
-
-    <TextView
-        android:id="@+id/tvBookInfoCourseNumber"
-        android:layout_width="70dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:text="TextView"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tvBookInfoCourseName"
+        app:layout_constraintEnd_toStartOf="@+id/tvBookInfoCourseNumber"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toEndOf="@+id/tvBookInfoCourseLabel"
         app:layout_constraintTop_toBottomOf="@+id/tvBookInfoCondition"
-        app:layout_constraintVertical_bias="0.187" />
+        app:layout_constraintVertical_bias="0.19" />
+
+    <TextView
+        android:id="@+id/tvBookInfoCourseNumber"
+        android:layout_width="70dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBookInfoCondition"
+        app:layout_constraintVertical_bias="0.19" />
 
     <Button
         android:id="@+id/btnBookInfoBack"
@@ -123,8 +119,8 @@
 
     <TextView
         android:id="@+id/tvBookInfoRealContactNumber"
-        android:layout_width="240dp"
-        android:layout_height="22dp"
+        android:layout_width="224dp"
+        android:layout_height="30dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -135,25 +131,29 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.858"
         app:layout_constraintStart_toEndOf="@+id/tvBookInfoContactInfoLabel"
-        app:layout_constraintTop_toBottomOf="@+id/tvBookInfoPrice"
-        app:layout_constraintVertical_bias="0.129" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.36" />
 
     <TextView
         android:id="@+id/tvBookInfoPriceLabel"
-        android:layout_width="110dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
+        android:layout_width="61dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="388dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         android:text="Price:"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvBookInfoTitle"
-        app:layout_constraintVertical_bias="0.34" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.222" />
 
     <TextView
         android:id="@+id/tvBookInfoContactInfoLabel"
@@ -161,7 +161,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
@@ -169,10 +169,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.014"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvBookInfoPriceLabel"
-        app:layout_constraintVertical_bias="0.004" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.361" />
 
     <TextView
         android:id="@+id/tvBookInfoConditionLabel"
