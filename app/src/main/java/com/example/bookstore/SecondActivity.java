@@ -34,6 +34,7 @@ public class SecondActivity extends AppCompatActivity {
         addBook = (Button)findViewById(R.id.btnAddBook);
         searchButton = (Button)findViewById(R.id.btnSearch);
         avatar = (ImageView)findViewById(R.id.ivProfileAvatar);
+        username = (TextView)findViewById(R.id.tvProfileUsername);
         email = (TextView)findViewById(R.id.tvProfileEmail);
 
         updateProfileDetails();

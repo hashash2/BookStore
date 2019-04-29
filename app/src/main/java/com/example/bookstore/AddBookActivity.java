@@ -68,11 +68,11 @@ public class AddBookActivity extends AppCompatActivity {
                     Firebase childRef = nRootRef.child("Book");
 
                     if (conditionID == R.id.rbConditionNew) {
-                        sCondition = "New";
+                        sCondition = "Like New";
                     } else if (conditionID == R.id.rbConditionVeryGood) {
-                        sCondition = "Very good";
+                        sCondition = "Very Good";
                     } else if (conditionID == R.id.rbConditionSomeWear) {
-                        sCondition = "Some wear";
+                        sCondition = "Good";
                     } else if (conditionID == R.id.rbConditionReadable) {
                         sCondition = "Readable";
                     }

@@ -12,20 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
-            tools:srcCompat="@tools:sample/avatars[3]"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"/>
-
         <TextView
             android:id="@+id/tvlsBookCondition"
             android:layout_width="140dp"
@@ -37,7 +23,7 @@
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
             android:text="TextView"
-            android:layout_toRightOf="@+id/imageView"
+            android:layout_toRightOf="@+id/tvlsBookInfoConditionLabel"
             android:layout_below="@+id/tvlsBookPrice"/>
 
         <TextView
@@ -51,7 +37,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
-            android:layout_toRightOf="@+id/imageView"
+            android:layout_toRightOf="@+id/tvlsBookInfoPriceLabel"
             android:text="TextView" />
 
         <TextView
@@ -65,7 +51,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
-            android:layout_toRightOf="@+id/imageView"
+            android:layout_toRightOf="@+id/tvlsBookInfoTitleLabel"
             android:text="TextView" />
 
         <Button
@@ -82,5 +68,48 @@
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"/>
 
+        <TextView
+            android:id="@+id/tvlsBookInfoTitleLabel"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Title: " />
+
+        <TextView
+            android:id="@+id/tvlsBookInfoPriceLabel"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvlsBookInfoTitleLabel"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Price: " />
+
+        <TextView
+            android:id="@+id/tvlsBookInfoConditionLabel"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvlsBookInfoPriceLabel"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Condition: " />
+
     </RelativeLayout>
+
 </android.support.v7.widget.CardView>
