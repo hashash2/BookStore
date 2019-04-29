@@ -63,7 +63,11 @@ public class MainActivity extends AppCompatActivity {
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                validate(Name.getText().toString().trim(), Password.getText().toString().trim());
+                if (Name.getText().toString().trim().isEmpty() || Password.getText().toString().trim().isEmpty()) {
+                    Toast.makeText(MainActivity.this, "Please fill out all forms", Toast.LENGTH_SHORT).show();
+                } else {
+                    validate(Name.getText().toString().trim(), Password.getText().toString().trim());
+                }
             }
         });
 
