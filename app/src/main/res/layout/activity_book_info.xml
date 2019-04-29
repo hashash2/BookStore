@@ -5,7 +5,8 @@
     android:id="@+id/tvBookInfoContactNumber"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BookInfoActivity">
+    tools:context=".BookInfoActivity"
+    android:background="@drawable/gradientbackground">
 
     <TextView
         android:id="@+id/tvBookInfoTitle"
