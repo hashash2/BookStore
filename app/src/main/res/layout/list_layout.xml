@@ -16,15 +16,15 @@
             android:id="@+id/tvlsBookCondition"
             android:layout_width="140dp"
             android:layout_height="18dp"
+            android:layout_below="@+id/tvlsBookPrice"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
-            android:text="TextView"
             android:layout_toRightOf="@+id/tvlsBookInfoConditionLabel"
-            android:layout_below="@+id/tvlsBookPrice"/>
+            android:text="TextView" />
 
         <TextView
             android:id="@+id/tvlsBookPrice"
@@ -58,15 +58,15 @@
             android:id="@+id/btnlsOpenBookInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Info"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/tvlsBookName"
             android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="0dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="8dp"
+            android:layout_toRightOf="@+id/tvlsBookName"
+            android:text="Info" />
 
         <TextView
             android:id="@+id/tvlsBookInfoTitleLabel"
