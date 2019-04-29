@@ -53,6 +53,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyAdapterViewHolde
             public void onClick(View v) {
                 Intent intent = new Intent(c, BookInfoActivity.class);
                 intent.putExtra("book", book);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 c.startActivity(intent);
             }
         });
