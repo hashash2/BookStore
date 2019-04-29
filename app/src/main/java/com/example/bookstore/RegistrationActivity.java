@@ -1,9 +1,12 @@
 package com.example.bookstore;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -71,6 +74,11 @@ public class RegistrationActivity extends AppCompatActivity {
         userEmail = (EditText)findViewById(R.id.etUserEmail);
         regButton = (Button)findViewById(R.id.btnRegister);
         userLogin = (TextView)findViewById(R.id.tvUserLogin);
+
+        SpannableString content = new SpannableString(userLogin.getText());
+        content.setSpan(new UnderlineSpan(), 0, userLogin.getText().length(), 0);
+        userLogin.setText(content);
+        userLogin.setTextColor(Color.rgb(0,102,255));
     }
 
     private Boolean validate() {
@@ -80,7 +88,7 @@ public class RegistrationActivity extends AppCompatActivity {
         String email = userEmail.getText().toString();
         // need to add more error meessages here with ||
         if (name.isEmpty() || password.isEmpty() || email.isEmpty()) {
-            Toast.makeText(this, "plese enter the details", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "please fill out all fields", Toast.LENGTH_SHORT).show();
         } else {
             result = true;
         }

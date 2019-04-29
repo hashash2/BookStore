@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void validate(String userName, String userPassword) {
 
-        progressDialog.setMessage("Logged In");
+        progressDialog.setMessage("Logging In");
         progressDialog.show();
 
 
