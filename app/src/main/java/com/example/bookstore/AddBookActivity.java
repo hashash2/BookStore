@@ -81,6 +81,7 @@ public class AddBookActivity extends AppCompatActivity {
                     } catch (NullPointerException e) {
                         Toast.makeText(AddBookActivity.this, "An error occurred grabbing userid", Toast.LENGTH_SHORT).show();
                     }
+                    startActivity(new Intent(AddBookActivity.this, SecondActivity.class));
                 }
 
             }
