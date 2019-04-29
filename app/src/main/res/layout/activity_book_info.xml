@@ -41,10 +41,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toEndOf="@+id/tvBookInfoConditionLabel"
         app:layout_constraintTop_toBottomOf="@+id/tvBookInfoRealContactNumber"
-        app:layout_constraintVertical_bias="0.128" />
+        app:layout_constraintVertical_bias="0.124" />
 
     <TextView
         android:id="@+id/tvBookInfoPrice"
@@ -60,14 +60,33 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.121"
+        app:layout_constraintHorizontal_bias="0.797"
         app:layout_constraintStart_toEndOf="@+id/tvBookInfoPriceLabel"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.222" />
+        app:layout_constraintVertical_bias="0.221" />
 
     <TextView
         android:id="@+id/tvBookInfoCourseName"
-        android:layout_width="170dp"
+        android:layout_width="264dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintStart_toEndOf="@+id/tvBookInfoCourseLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvBookInfoCondition"
+        app:layout_constraintVertical_bias="0.193" />
+
+    <TextView
+        android:id="@+id/tvBookInfoCourseNumber"
+        android:layout_width="70dp"
         android:layout_height="22dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -78,26 +97,11 @@
         android:text="TextView"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tvBookInfoCourseNumber"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toEndOf="@+id/tvBookInfoCourseLabel"
-        app:layout_constraintTop_toBottomOf="@+id/tvBookInfoCondition"
-        app:layout_constraintVertical_bias="0.19" />
-
-    <TextView
-        android:id="@+id/tvBookInfoCourseNumber"
-        android:layout_width="70dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="8dp"
-        android:text="TextView"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvBookInfoCondition"
-        app:layout_constraintVertical_bias="0.19" />
+        app:layout_constraintHorizontal_bias="0.424"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBookInfoCourseName"
+        app:layout_constraintVertical_bias="0.012" />
 
     <Button
         android:id="@+id/btnBookInfoBack"
@@ -131,10 +135,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.858"
+        app:layout_constraintHorizontal_bias="0.377"
         app:layout_constraintStart_toEndOf="@+id/tvBookInfoContactInfoLabel"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.36" />
+        app:layout_constraintVertical_bias="0.356" />
 
     <TextView
         android:id="@+id/tvBookInfoPriceLabel"
@@ -172,7 +176,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.361" />
+        app:layout_constraintVertical_bias="0.353" />
 
     <TextView
         android:id="@+id/tvBookInfoConditionLabel"
@@ -191,7 +195,7 @@
         app:layout_constraintHorizontal_bias="0.014"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvBookInfoContactInfoLabel"
-        app:layout_constraintVertical_bias="0.124" />
+        app:layout_constraintVertical_bias="0.137" />
 
     <TextView
         android:id="@+id/tvBookInfoCourseLabel"
