@@ -107,7 +107,7 @@ public class SearchActivity extends AppCompatActivity {
             @NonNull
             @Override
             public BookViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-                View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_layout,viewGroup,false);
+                View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_layout, viewGroup,false);
                 return new BookViewHolder(view);
             }
         };
