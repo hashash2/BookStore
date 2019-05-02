@@ -8,8 +8,26 @@
     android:background="@drawable/gradientbackground"
     tools:context=".BookInfoActivity">
 
-    <TextView
-        android:id="@+id/tvBookInfoTitle"
+    <Button
+        android:id="@+id/btnEditBookRemove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Delete Listing"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.988" />
+
+    <EditText
+        android:id="@+id/etEditTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -19,35 +37,63 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:text="TextView"
-        android:textSize="22dp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.398"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.051" />
+        app:layout_constraintVertical_bias="0.14" />
 
-    <TextView
-        android:id="@+id/etEditCondition"
-        android:layout_width="240dp"
-        android:layout_height="22dp"
+    <RadioGroup
+        android:id="@+id/rgEditConditionButtons"
+        android:layout_width="0dp"
+        android:layout_height="33dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="TextView"
-        android:textSize="18sp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
-        app:layout_constraintStart_toEndOf="@+id/tvEditConditionLabel"
-        app:layout_constraintTop_toBottomOf="@+id/etEditContactInfo"
-        app:layout_constraintVertical_bias="0.124" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/tvBookInfoPrice"
+        <RadioButton
+            android:id="@+id/rbConditionNew"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Like New" />
+
+        <RadioButton
+            android:id="@+id/rbConditionVeryGood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Very Good" />
+
+        <RadioButton
+            android:id="@+id/rbConditionSomeWear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Good" />
+
+        <RadioButton
+            android:id="@+id/rbConditionReadable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Readable" />
+    </RadioGroup>
+
+
+    <EditText
+        android:id="@+id/etEditPrice"
         android:layout_width="242dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
@@ -60,12 +106,12 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.797"
+        app:layout_constraintHorizontal_bias="0.607"
         app:layout_constraintStart_toEndOf="@+id/tvEditContactLabel"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.221" />
 
-    <TextView
+    <EditText
         android:id="@+id/etEditCourseName"
         android:layout_width="264dp"
         android:layout_height="24dp"
@@ -84,8 +130,8 @@
         app:layout_constraintTop_toBottomOf="@+id/etEditCondition"
         app:layout_constraintVertical_bias="0.193" />
 
-    <TextView
-        android:id="@+id/tvBookInfoCourseNumber"
+    <EditText
+        android:id="@+id/etEditCourseNumber"
         android:layout_width="70dp"
         android:layout_height="22dp"
         android:layout_marginStart="8dp"
@@ -104,7 +150,7 @@
         app:layout_constraintVertical_bias="0.012" />
 
     <Button
-        android:id="@+id/btnBookInfoBack"
+        android:id="@+id/btnEditBookSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -113,7 +159,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Back"
+        android:text="Submit Edits"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -121,7 +167,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.988" />
 
-    <TextView
+    <EditText
         android:id="@+id/etEditContactInfo"
         android:layout_width="224dp"
         android:layout_height="30dp"
@@ -141,7 +187,7 @@
         app:layout_constraintVertical_bias="0.356" />
 
     <TextView
-        android:id="@+id/tvEditContactLabel"
+        android:id="@+id/tvEditPriceLabel"
         android:layout_width="61dp"
         android:layout_height="28dp"
         android:layout_marginStart="8dp"
@@ -192,10 +238,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.014"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvEditContactLabel"
-        app:layout_constraintVertical_bias="0.137" />
+        app:layout_constraintVertical_bias="0.098" />
 
     <TextView
         android:id="@+id/tvEditCourseInfoLabel"
@@ -215,4 +261,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvEditConditionLabel"
         app:layout_constraintVertical_bias="0.184" />
+
+    <TextView
+        android:id="@+id/tvEditTitleLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Title: "
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.022"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.14" />
 </android.support.constraint.ConstraintLayout>

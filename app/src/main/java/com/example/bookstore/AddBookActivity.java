@@ -83,7 +83,6 @@ public class AddBookActivity extends AppCompatActivity {
                     }
                     startActivity(new Intent(AddBookActivity.this, SecondActivity.class));
                 }
-
             }
         });
     }

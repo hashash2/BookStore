@@ -103,13 +103,13 @@ public class SecondActivity extends AppCompatActivity {
                     holder.bookPrice.setText(model.price);
 
 
-                    //Change view info to be an option to delete current listing:
-                    holder.viewInfo.setText("Delete");
+                    //Change view info to be an option to edit current listing:
+                    holder.viewInfo.setText("Edit");
                     holder.viewInfo.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            adapter.getRef(position).removeValue();
-                            Toast.makeText(SecondActivity.this, "Successfully deleted book listing.", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(SecondActivity.this, EditBookActivity.class);
+                            intent.putExtra("bookRef", adapter.getRef(position).toString());
                         }
                     });
                 } else {
