@@ -110,6 +110,8 @@ public class SecondActivity extends AppCompatActivity {
                         public void onClick(View v) {
                             Intent intent = new Intent(SecondActivity.this, EditBookActivity.class);
                             intent.putExtra("bookRef", adapter.getRef(position).toString());
+                            finish();
+                            startActivity(intent);
                         }
                     });
                 } else {
