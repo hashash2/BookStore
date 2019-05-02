@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.bookstore.Model.Book;
 import com.example.bookstore.ViewHolder.BookViewHolder;
@@ -91,7 +92,7 @@ public class SecondActivity extends AppCompatActivity {
 
         adapter = new FirebaseRecyclerAdapter<Book, BookViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull BookViewHolder holder, int position, @NonNull final Book model) {
+            protected void onBindViewHolder(@NonNull BookViewHolder holder, final int position, @NonNull final Book model) {
                 if (model.userid.toString().equals(firebaseAuth.getCurrentUser().getUid().toString())) {
                     holder.itemView.setVisibility(View.VISIBLE);
                     holder.itemView.setLayoutParams(
@@ -102,16 +103,13 @@ public class SecondActivity extends AppCompatActivity {
                     holder.bookPrice.setText(model.price);
 
 
-                    //TODO: but leaving it like an info box until then.
                     //Change view info to be an option to delete current listing:
-                    //holder.viewInfo.setText("Delete");
+                    holder.viewInfo.setText("Delete");
                     holder.viewInfo.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            finish();
-                            Intent intent = new Intent(SecondActivity.this, BookInfoActivity.class);
-                            intent.putExtra("book", model);
-                            startActivity(intent);
+                            adapter.getRef(position).removeValue();
+                            Toast.makeText(SecondActivity.this, "Successfully deleted book listing.", Toast.LENGTH_SHORT).show();
                         }
                     });
                 } else {
